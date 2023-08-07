@@ -25,8 +25,8 @@ clean:
 ## pack@打包lib库。
 .PHONY: pack
 pack:
-	@cd ./lib && tar -zcvf sdk.tar.gz ./*;
-	@mkdir -p release && mv ./lib/sdk.tar.gz ./release;
+	@tar -zcvf sdk.tar.gz ./*;
+	@mkdir -p release && mv ./sdk.tar.gz ./release;
 	@echo "\033[31m ✅  打包完毕\033[0m";
 
 

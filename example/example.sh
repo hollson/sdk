@@ -1,6 +1,6 @@
 #!/bin/bash
 # shellcheck source=/dev/null
-source ./sdk.sh
+source ../sdk.sh
 
 # 全局变量
 export APP_NAME="Example Project" # 应用名称

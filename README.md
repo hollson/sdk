@@ -14,7 +14,9 @@
 
 ## Download
 ```shell
-wget https://github.com/hollson/oskeeper/releases/download/latest/sdk.tar.gz
+curl -LO https://github.com/hollson/sdk/releases/download/latest/sdk.tar.gz
+# or
+curl -LO https://raw.githubusercontent.com/hollson/sdk/master/sdk.sh
 ```
 
 <br/>
@@ -141,18 +143,46 @@ testSysInspect
 
 ## Example
 ```shell
-./example.sh 
+> ./example.sh 
 =========================================================
-     欢迎使用Example Project v2.0.0                                                                                                                                                                                  
-=========================================================                                                                                                                                                            
+     欢迎使用Example Project v1.0.0
+=========================================================
 用法：
  example.sh [command] <params>
 
 Available Commands:
- 命令   说明
- build   编译项目
- run     运行项目
- status  查看服务状态
+ 命令    简称   说明
+ build    -    编译项目
+ install  ins  安装程序
+ run      -    运行程序
+ status   stt  查看服务状态
+ list     -    查看函数列表
+ version  ver  查看应用版本
+ help     *    查看帮助说明
 
 更多详情，请参考 https://github.com/hollson
+
+
+> ./example_test.sh 
+=== 🧪🧪🧪 执行单元测试 🧪🧪🧪===
+命令格式: 
+    ./example_test.sh <list|all|testXXX> [OPTIONS]
+
+Options: 
+    -v,--verbose  打印详细信息
+
+示例：
+1) 单元测试列表:   ./example_test.sh list 
+2) 执行具体函数:   ./example_test.sh testXXX 
+3) 执行全部测试:   ./example_test.sh all 
+
+设置verbose系统变量: export TEST_VERBOSE=on
+
+> ./example_test.sh all
+[UT]            ✅               testBuild                       成功
+[UT]            ✅               testDemo                        成功
+[UT]            ❌               testInstall                     失败
+[UT]            ❌               testRun                         失败
+[UT]            ✅               testStatus                      成功
+[UT]            ⛔️               testStop                        函数/命令不存在
 ```
