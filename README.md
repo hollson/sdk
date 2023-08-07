@@ -161,9 +161,9 @@ Available Commands:
  help     *    查看帮助说明
 
 更多详情，请参考 https://github.com/hollson
-
-
-> ./example_test.sh 
+```
+```shell
+$ ./example_test.sh 
 === 🧪🧪🧪 执行单元测试 🧪🧪🧪===
 命令格式: 
     ./example_test.sh <list|all|testXXX> [OPTIONS]
@@ -177,7 +177,8 @@ Options:
 3) 执行全部测试:   ./example_test.sh all 
 
 设置verbose系统变量: export TEST_VERBOSE=on
-
+```
+```shell
 > ./example_test.sh all
 [UT]            ✅               testBuild                       成功
 [UT]            ✅               testDemo                        成功
