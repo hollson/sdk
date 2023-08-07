@@ -163,7 +163,7 @@ Available Commands:
 更多详情，请参考 https://github.com/hollson
 ```
 ```shell
-$ ./example_test.sh 
+> ./example_test.sh 
 === 🧪🧪🧪 执行单元测试 🧪🧪🧪===
 命令格式: 
     ./example_test.sh <list|all|testXXX> [OPTIONS]
