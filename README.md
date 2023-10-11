@@ -1,4 +1,8 @@
 # Shell Development Kit
+**这是一款规范、优雅的shell脚本模板，开发者与运维人员的必备神器...🚀 🚀 🚀**
+
+<br/>
+
 
 ![gdk](./favicon.svg?description=1&language=1&pattern=Floating%20Cogs&theme=Light)
 
