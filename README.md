@@ -80,7 +80,7 @@ Available Commands:
 
 <br/>
 
-## Unit Test
+## UnitTest
 **查看UT帮助信息：**
 ```shell
 > ./sdk_test.sh 
