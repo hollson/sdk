@@ -248,9 +248,9 @@ function iniCheck() {
   [[ $# -lt 2 ]] || return 127
   [[ -f $1 ]] && fileOrTxt=$(cat "${fileOrTxt}")
   ret=$(echo "${fileOrTxt}" | awk -F= 'BEGIN{valid=1}{
-        if(valid == 0) next  
+        if(valid == 0) next
         if(length($0) == 0) next
-        gsub(" |\t","",$0)     
+        gsub(" |\t","",$0)
         head_char=substr($0,1,1)
         if (head_char != "#" && head_char != ";"){
             if( NF == 1){
@@ -261,7 +261,7 @@ function iniCheck() {
             }else if( NF == 2){
                 b=substr($0,1,1)
                 if (b == "["){ valid=0 }
-            }else{ valid=0 } 
+            }else{ valid=0 }
         }
     } END{print valid}')
   [[ $ret == 1 ]] || return 1
@@ -330,7 +330,7 @@ function jsonParser() {
                         stop = currChar == "," ? i : i + 1 + layer;break;}}
                     }
             if (start <= 0 || stop <= 0 || start > length(json) || stop > length(json) || start >= stop) {
-                if (foundKeyCount == 0) {print defaultValue;} exit 0;} 
+                if (foundKeyCount == 0) {print defaultValue;} exit 0;}
                 else {print substr(json, start, stop - start);
             }
             json = substr(json, stop + 1, length(json) - stop)}}' | xargs
@@ -657,7 +657,7 @@ function main() {
     help
     return 0
   fi
-  cs=$(sed -n "s/^#CMD//p" "$0" | awk -F '|' '{print $1,$2}' | grep -E "[\s\|]*${COMMAND}[\s\|]*")
+  cs=$(sed -n "s/^#CMD//p" "$0" | awk -F '|' '{print $1,$2}' | grep -w -E "[\s\|]*${COMMAND}[\s\|]*")
   if test $? || [[ ${cs} == "" ]]; then
     "$(echo "${cs}" | awk '{print $1}')" 2>/dev/null
     [[ $? != 127 ]] || echox warn "执行失败，请检查参数和CMD命令注释是否正确"
